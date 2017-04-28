@@ -28,5 +28,7 @@ from sklearn.metrics import accuracy_score print('Accuracy: %.2f' % accuracy_sco
 
 * [Deep Learning with Hadoop](https://www.packtpub.com/big-data-and-business-intelligence/deep-learning-hadoop?utm_source=github&utm_medium=repository&utm_campaign=9781787124769)
 
+* [Python Machine Learning](https://www.packtpub.com/big-data-and-business-intelligence/python-machine-learning?utm_source=github&utm_medium=repository&utm_campaign=9781783555130)
+
 ### Suggestions and Feedback
 [Click here](https://docs.google.com/forms/d/e/1FAIpQLSe5qwunkGf6PUvzPirPDtuy1Du5Rlzew23UBp2S-P3wB-GcwQ/viewform) if you have any feedback or suggestions.
