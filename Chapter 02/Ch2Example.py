@@ -37,7 +37,7 @@ class NeuralNetwork:
                 #print ('epochs:', k/self.steps_per_epoch)    
                 print('epochs: {}'.format(k/self.steps_per_epoch))              
                 for s in data:                     
-                    print(s, nn.predict(s))
+                    print(s, self.predict(s))
 
             sample = numpy.random.randint(data.shape[0])            
             y = [Z[sample]] 
@@ -74,9 +74,9 @@ class NeuralNetwork:
             #    to get the gradient of the weight.
             # 2. Subtract a ratio (percentage) of the gradient from the weight
             for i in range(len(self.weights)):
-                layer = y[i].reshape(1, nn.arch[i]+1) 
+                layer = y[i].reshape(1, self.arch[i]+1) 
  
-                delta = delta_vec[i].reshape(1, nn.arch[i+1])
+                delta = delta_vec[i].reshape(1, self.arch[i+1])
                 self.weights[i] += learning_rate * layer.T.dot(delta)
 
     def predict(self, x): 
@@ -102,7 +102,7 @@ class NeuralNetwork:
         input = numpy.array([xx1.ravel(), xx2.ravel()]).T 
         Z = numpy.empty(0)
         for i in range(input.shape[0]):
-            val = nn.predict(numpy.array(input[i]))
+            val = self.predict(numpy.array(input[i]))
             if val < 0.5: val = 0 
             if val >= 0.5: val = 1
             Z = numpy.append(Z, val)
